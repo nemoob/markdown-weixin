@@ -143,6 +143,15 @@ $(function() {
     OnlineMarkdown.headingColor = color;
     OnlineMarkdown.applyHeadingColor(color);
   });
+  $('.title-color-select').on('change', function() {
+    var color = $(this).val();
+    OnlineMarkdown.headingColor = color;
+    OnlineMarkdown.applyHeadingColor(color);
+    // 同步到原生颜色输入框
+    $('.title-color-picker').val(color);
+  });
   // 初始化应用默认颜色
   OnlineMarkdown.applyHeadingColor(OnlineMarkdown.headingColor);
+  // 同步下拉默认值
+  $('.title-color-select').val(OnlineMarkdown.headingColor);
 });
